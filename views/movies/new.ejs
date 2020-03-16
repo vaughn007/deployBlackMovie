@@ -1,0 +1,126 @@
+<% include ../partials/header %> <!-- go back a folder. it like using cd .. -->
+
+<!-- form ////////////////////////////////////////////////////// -->
+<div class="bg-contact3">
+    <div class="container-contact3">
+      <div class="wrap-contact3">
+        <form class="contact3-form validate-form" action="/movies" method="POST">
+          <span class="contact3-form-title">
+            Create a New Movies
+          </span>
+          
+
+          <div class="wrap-input3 validate-input" data-validate="Name is required">
+            <input class="input3" type="text" name="name" placeholder="Your name">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="wrap-input3 validate-input" data-validate="Stars is required">
+            <input class="input3" type="text" name="stars" placeholder="Stars">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="wrap-input3 validate-input" data-validate="Year is required">
+            <input class="input3" type="text" name="year" placeholder="Year">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="wrap-input3 validate-input" data-validate="Director is required">
+            <input class="input3" type="text" name="director" placeholder="Director">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="wrap-input3 validate-input" data-validate="URL is required">
+            <input class="input3" type="text" name="image" placeholder="image url">
+            <span class="focus-input3"></span>
+          </div>
+			
+			<div class="wrap-input3 validate-input" data-validate="Movie URL is required">
+            <input class="input3" type="text" name="trailer" placeholder="Movie Trailer URL">
+            <span class="focus-input3"></span>
+          </div>
+
+          
+
+          <div class="wrap-input3 validate-input" data-validate = "Description is required">
+            <textarea class="input3" name="description" placeholder="description"></textarea>
+            <span class="focus-input3"></span>
+          </div>
+
+          <div>
+            <input type='hidden' name='comment[author]' value=<%=currentUser.username%> >
+          </div>
+
+          <div class="container-contact3-form-btn">
+            <button class="contact3-form-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- <div class="container">
+<div class="row">
+  <h1 style="text-align:center;">Create a New Movies</h1>
+  <div style="width:30%; margin: 25px auto;">
+<form action="/movies" method="POST">
+  <div class="form-group">
+    <input class="form-control" type="text" name="name" placeholder="name">
+  </div>
+  
+  <div class="form-group">
+    
+	  <input class="form-control" type="text" name="stars" placeholder="Stars" >
+  </div>
+	
+	 <div class="form-group">
+    <input class="form-control" type="text" name="year" placeholder="Year">
+  </div>
+	
+	<div class="form-group">
+    <input class="form-control" type="text" name="director" placeholder="Director">
+  </div>
+	
+  
+  <div class="form-group">
+  <input class="form-control" type="text" name="image" placeholder="image url">
+  </div>
+  
+  <div class="form-group">
+  <input class="form-control" type="text" name="description" placeholder="description">
+  </div>
+	
+	<div class="form-group">
+            
+	
+		<input class="form-control" type="text" name="trailer" placeholder="Movie Trailer URL">
+	</div>
+  
+  <div class="form-group">
+  
+  <input type='hidden' name='comment[author]' value=<%=currentUser.username%> >
+  </div>
+  
+  
+  
+  <div class="form-group">
+  <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+  </div>
+</form>
+<a href="/movies"><i class="fas fa-chevron-left"></i> Go Back</a>
+</div>
+
+</div>
+
+</div>
+ -->
+
+
+
+
+
+
+
+<% include ../partials/footer %> <!-- go back a folder. it like using cd .. -->

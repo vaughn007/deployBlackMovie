@@ -1,0 +1,36 @@
+  <!-- ./partials because we are not in diffent folder  -->
+<% include ./partials/header %>
+
+
+<!-- form ////////////////////////////////////////////////////// -->
+<div class="bg-contact3">
+    <div class="container-contact3">
+      <div class="wrap-contact3">
+        <form class="contact3-form validate-form" action="/login" method="POST">
+          <span class="contact3-form-title">
+            Login
+          </span>
+          
+
+          <div class="wrap-input3 validate-input" data-validate="Username required">
+            <input class="input3" type="text" name="username" placeholder="username">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="wrap-input3 validate-input" data-validate="Password is required">
+            <input class="input3" type="password" name="password" placeholder="password">
+            <span class="focus-input3"></span>
+          </div>
+
+          <div class="container-contact3-form-btn">
+            <button class="contact3-form-btn">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<% include ./partials/footer %> 

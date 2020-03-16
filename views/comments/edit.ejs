@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+
+<div class="bg-contact3">
+    <div class="container-contact3">
+      <div class="wrap-contact3">
+        <form class="contact3-form validate-form" action="/movies/<%= movie_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+          <span class="contact3-form-title">
+            Edit Comment
+          </span>
+          
+
+          <div class="wrap-input3 validate-input" data-validate="Name is required">
+            <input class="input3" type="text" name="comment[text]" value="<%= comment.text %>">
+            <span class="focus-input3"></span>
+          </div>
+          
+          
+          <div class="container-contact3-form-btn">
+            <button class="contact3-form-btn">
+              Update 
+            </button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<!-- old form -->
+<!-- <div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Edit Comment</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/movies/<%= movie_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/movies">Go Back</a>
+        </div>
+    </div>
+</div> -->
+<% include ../partials/footer %>
+

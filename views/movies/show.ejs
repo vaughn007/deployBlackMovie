@@ -1,0 +1,111 @@
+<% include ../partials/header %>
+<div class="container-fluid">
+<div id="wrapper">
+          <div id="main">
+			  <video width="1253" height="600" controls autoplay>
+              <source src="<%- movie.trailer %>" type="video/mp4">
+              <source src="<%= movie.trailer %>" type="video/ogg">
+              Your browser does not support HTML5 video.
+            </video>
+			  
+			  
+                
+            <div class="trailer-title">
+            <h4><%=movie.name%></h4>
+          </div>
+      
+          <div class="stars">
+              <p><span class="bold">STARS:</span> &nbsp;  <%= movie.stars %></p>
+          </div>
+      
+          <div class="year">
+            <p><span class="bold">YEAR:</span> &nbsp; <%= movie.year %></p>
+          </div>
+          <hr class="hr-trailer">
+          <div>
+            <p><span class="bold">DIRECTED BY:</span> &nbsp; <%= movie.director %></p>
+          </div>
+      
+          <div class="about-movie">
+          <p><%= movie.description %></p>
+
+          <% if(currentUser && movie.author.id.equals(currentUser._id)){ %>
+                  <hr class="hr-trailer">
+			  <div class="editButton">
+				  <a class="btn  btn-warning" href="/movies/<%= movie._id %>/edit">EDIT <i class="fas fa-edit"></i></a>
+				  
+			  </div>
+			  
+			  <!-- <br><br> -->
+			  <div class="deleteButton">
+				  <form class="delete-form" action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+                            <button class="btn  btn-danger">REMOVE <i class="fas fa-trash-alt"></i></button>
+                        </form>
+				  
+			  </div>
+			  
+			  <div class="clearfix"></div>
+                        
+                    <% }%>
+          </div>
+          </div>
+	<!-- COMMENTS -->
+	<hr class="hr-trailer">
+	
+	<h4>SEND COMMENT:</h4>
+	<div class="commentForm">
+		<form action="/movies/<%=movie._id%>/comments" method="POST">
+		<textarea name="comment[text]" class="feedback-input" placeholder="
+Add a public comment..." required></textarea>
+
+
+	<input type='hidden' name='comment[author]'>
+			
+			<button type="submit" class="commentSubmit" value="COMMENT"> COMMENT</button>
+  
+			
+              </form>
+		
+	</div> 
+	
+	
+
+          <% movie.comments.forEach(function(comment){ %>
+          <div class="postForm">
+			  <p><i class="fas fa-user-circle userIcon"></i> <span class="bold"><%= comment.author.username %></span></p>
+			  <p><%= comment.text %></p>
+              
+          </div>
+
+          <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+	<div class="editButton">
+		
+                            <a class="btn  btn-warning" 
+                               href="/movies/<%=movie._id %>/comments/<%=comment._id %>/edit">EDIT <i class="fas fa-edit"></i></a>
+	</div>
+	<div class="deleteButton">
+	
+                            <form class="delete-form" action="/movies/<%=movie._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                <button class="btn  btn-danger">REMOVE <i class="fas fa-trash-alt"></i></button>
+                            </form>
+	</div>
+	
+	<div class="clearfix"></div>
+		
+                        <% } %>
+                         <% }) %>
+	
+	
+	<!-- End of COMMENTS -->
+	 
+      </div>
+</div>
+
+ 
+<% include ../partials/footer %>
+
+
+
+
+
+

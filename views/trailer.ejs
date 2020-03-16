@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+
+<div class="center">
+    <h2><%= movie.title %></h2>
+    <div>
+        <video controls autoplay>
+              <source src="<%= movie.trailer %>" type="video/mp4">
+              <source src="<%= movie.trailer %>" type="video/ogg">
+              Your browser does not support HTML5 video.
+            </video>
+    </div>
+    
+    <div class="about_movie">
+    <div class="description"><h4 class="inline">Stars: &nbsp; <%= movie.stars %> </h4></div>
+    
+    <p><%- movie.body %></p>  <!-- minus (-) let you add htnl p tags -->
+    </div>
+    
+</div>
+
+
+        
+            
+            <br><br>
+<% include ./partials/footer %>
